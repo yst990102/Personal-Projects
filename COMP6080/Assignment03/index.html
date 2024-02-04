@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>等待页面</title>
+</head>
+<body>
+    <h1>请稍候，项目的Docker容器正在启动中...</h1>
+
+    <script>
+        // 后端链接
+        const backendURL = 'https://comp6080-ass3-backend.onrender.com';
+        // 前端链接
+        const frontendURL = 'https://comp6080-ass3-frontend.onrender.com';
+
+        // 发起GET请求检查后端是否启动完成
+        fetch(backendURL)
+            .then(response => {
+                if (response.ok) {
+                    // 后端启动完成，提示用户并跳转到前端页面
+                    alert('后端启动完成，即将跳转页面到前端页面');
+                    window.location.href = frontendURL;
+                } else {
+                    // 后端尚未启动完成，定时刷新页面
+                    setTimeout(() => {
+                        location.reload();
+                    }, 5000); // 刷新间隔为5秒，可以根据实际情况调整
+                }
+            })
+            .catch(error => {
+                // 发生错误时，也可以定时刷新页面
+                console.error('发生错误:', error);
+                setTimeout(() => {
+                    location.reload();
+                }, 5000);
+            });
+    </script>
+</body>
+</html>
