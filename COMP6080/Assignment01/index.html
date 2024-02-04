@@ -20,14 +20,12 @@
                     alert('即将跳转页面到前端页面');
                     window.location.href = URL;
                 } else {
-                    // 尚未启动完成，关闭当前标签页
-                    window.close();
+                    alert(`发生错误:\n请检查链接 ${URL}可否访问\n`);
                 }
             })
             .catch(error => {
-                // 发生错误时，关闭当前标签页
-                console.error('发生错误:', error);
-                window.close();
+                // 发生错误时，输出错误信息到控制台
+                alert(`发生错误:\n${error}\n请检查链接 ${URL}可否访问`);
             });
     </script>
 </body>

@@ -30,7 +30,7 @@
             })
             .catch(error => {
                 // 发生错误时，也可以定时刷新页面
-                console.error('发生错误:', error);
+                alert('发生错误:\n', error);
                 setTimeout(() => {
                     location.reload();
                 }, 5000);
