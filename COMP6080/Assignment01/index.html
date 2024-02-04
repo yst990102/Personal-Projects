@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>等待页面</title>
+</head>
+<body>
+    <h1>请稍候，正在跳转...</h1>
+
+    <script>
+        // 链接
+        const URL = 'https://comp6080-ass1.vercel.app';
+
+        // 发起GET请求检查后端是否启动完成
+        fetch(URL)
+            .then(response => {
+                if (response.ok) {
+                    // 提示用户并跳转到前端页面
+                    alert('即将跳转页面到前端页面');
+                    window.location.href = URL;
+                } else {
+                    // 尚未启动完成，关闭当前标签页
+                    window.close();
+                }
+            })
+            .catch(error => {
+                // 发生错误时，关闭当前标签页
+                console.error('发生错误:', error);
+                window.close();
+            });
+    </script>
+</body>
+</html>
