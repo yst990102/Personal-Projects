@@ -6,7 +6,7 @@
     <title>等待页面</title>
 </head>
 <body>
-    <h1>请稍候，项目的Docker容器正在启动中...</h1>
+    <h1>请稍候，项目正在启动中...</h1>
 
     <script>
         // 后端链接
@@ -18,11 +18,11 @@
         fetch(backendURL)
             .then(response => {
                 if (response.ok) {
-                    // 后端启动完成，提示用户并跳转到前端页面
-                    alert('后端启动完成，即将跳转页面到前端页面');
+                    // 项目启动完成，提示用户并跳转页面
+                    alert('项目启动完成，即将跳转页面。。。');
                     window.location.href = frontendURL;
                 } else {
-                    // 后端尚未启动完成，定时刷新页面
+                    // 项目尚未启动完成，定时刷新页面
                     setTimeout(() => {
                         location.reload();
                     }, 5000); // 刷新间隔为5秒，可以根据实际情况调整

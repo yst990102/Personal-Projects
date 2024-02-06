@@ -9,18 +9,16 @@
     <h1>请稍候，项目正在启动中...</h1>
 
     <script>
-        // 后端链接
-        const backendURL = 'https://comp1531-project-backend.onrender.com';
-        // 前端链接
-        const frontendURL = 'https://comp1531-project.yst990102.vercel.app';
+        // 项目链接
+        const projectURL = 'https://youtube-downloader-8mvd.onrender.com';
 
         // 发起GET请求检查后端是否启动完成
-        fetch(backendURL)
+        fetch(projectURL)
             .then(response => {
                 if (response.ok) {
                     // 项目启动完成，提示用户并跳转页面
                     alert('项目启动完成，即将跳转页面。。。');
-                    window.location.href = frontendURL;
+                    window.location.href = projectURL;
                 } else {
                     // 项目尚未启动完成，定时刷新页面
                     setTimeout(() => {
